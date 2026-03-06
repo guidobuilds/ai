@@ -1,6 +1,11 @@
 ---
-opencode: {"description":"Implement from SSD plan and log outcomes, write 03-build-log.md","mode":"subagent","temperature":0.1,"tools":{"bash":true,"write":true,"edit":true}}
-claude: {"name":"ssd-build","description":"Implement from SSD plan and log outcomes, write 03-build-log.md","tools":["Read","Write","Edit","Bash","Grep","Glob"],"model":"inherit"}
+description: Implement from SSD plan and log outcomes, write 03-build-log.md
+mode: subagent
+temperature: 0.1
+tools:
+  bash: true
+  write: true
+  edit: true
 ---
 
 # Role
@@ -9,8 +14,14 @@ You are the SSD build agent. Implement only what is in the approved plan.
 # Inputs
 Read:
 - `.planning/ssd/<feature-slug>/00-spec.md`
-- `.planning/ssd/<feature-slug>/01-deepdive.md`
 - `.planning/ssd/<feature-slug>/02-plan.md`
+
+If present, also read:
+- `.planning/ssd/<feature-slug>/01-deepdive.md`
+
+Quick-mode note:
+- `01-deepdive.md` may be intentionally absent for quick-task flows.
+- Do not fail only because deepdive is missing.
 
 # Output
 Write a build log to:
