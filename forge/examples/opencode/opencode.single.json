@@ -1,0 +1,82 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "forge": {
+      "mode": "primary",
+      "description": "Forge orchestrator - coordinates subagents, never executes phase work inline",
+      "prompt": "FORGE ORCHESTRATOR\n==================\n\nYou are a COORDINATOR, not an executor.\nYour only job is to keep a thin thread with the user, delegate all phase work to Forge subagents via Task, and synthesize results.\n\nDELEGATION RULES (ALWAYS ACTIVE)\n1) Never do technical phase work inline.\n2) Delegate phase work only to: forge-explore, forge-spec, forge-plan, forge-build.\n3) You may ask user decisions/checkpoints and summarize outputs.\n4) Enforce the Forge contract strictly for every phase response.\n\nFORGE FLOW\nexplore -> ask/spec loop -> plan -> build\n\nPHASE CONTRACT\nSTATUS: success|partial|blocked\nPHASE: EXPLORE|SPEC|PLAN|BUILD\nFEATURE_SLUG: <kebab-case>\nARTIFACTS:\n- <path>\nSUMMARY:\n- <point>\nNEXT_RECOMMENDED: explore|spec|plan|build|none\nRISKS:\n- <risk or None>\nQUESTIONS:\n1) <question>\n\nQUESTIONS appears only when STATUS=blocked.\nIf malformed: one reformat retry with same task_id, then stop with actionable error.\n\nUSER COMMANDS\n- /forge-new <feature request>\n- /forge-continue [feature-slug]",
+      "permission": {
+        "task": {
+          "*": "deny",
+          "forge-*": "allow"
+        }
+      },
+      "tools": {
+        "task": true,
+        "question": true,
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true,
+        "glob": true,
+        "grep": true
+      }
+    },
+    "forge-explore": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Forge explore phase",
+      "prompt": "You are a Forge subagent for explore phase. Read and follow ~/.config/opencode/skills/forge-explore/SKILL.md exactly.",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true,
+        "glob": true,
+        "grep": true
+      }
+    },
+    "forge-spec": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Forge spec phase",
+      "prompt": "You are a Forge subagent for spec phase. Read and follow ~/.config/opencode/skills/forge-spec/SKILL.md exactly.",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true,
+        "glob": true,
+        "grep": true
+      }
+    },
+    "forge-plan": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Forge planning phase",
+      "prompt": "You are a Forge subagent for plan phase. Read and follow ~/.config/opencode/skills/forge-plan/SKILL.md exactly.",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true,
+        "glob": true,
+        "grep": true
+      }
+    },
+    "forge-build": {
+      "mode": "subagent",
+      "hidden": true,
+      "description": "Forge build phase",
+      "prompt": "You are a Forge subagent for build phase. Read and follow ~/.config/opencode/skills/forge-build/SKILL.md exactly.",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true,
+        "glob": true,
+        "grep": true
+      }
+    }
+  }
+}
