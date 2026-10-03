@@ -10,6 +10,7 @@ Centralized place for all things AI — tools, prompts, agents, skills, and expe
 | [vercel-react-best-practices](https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices) | Vercel's recommended patterns for building React applications |
 | [frontend-design](https://skills.sh/pbakaus/impeccable/frontend-design) | Production-grade frontend design and UI generation |
 | [ux-copy](https://skills.sh/anthropics/knowledge-work-plugins/ux-copy) | UX copywriting skill from Anthropic's knowledge-work-plugins repository |
+| [svg-logo-designer](https://skills.sh/rknall/claude-skills/svg-logo-designer) | Designs and generates scalable SVG logos |
 
 ## Claude plugins
 
