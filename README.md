@@ -11,6 +11,8 @@ Centralized place for all things AI — tools, prompts, agents, skills, and expe
 | [frontend-design](https://skills.sh/pbakaus/impeccable/frontend-design) | Production-grade frontend design and UI generation |
 | [ux-copy](https://skills.sh/anthropics/knowledge-work-plugins/ux-copy) | UX copywriting skill from Anthropic's knowledge-work-plugins repository |
 | [svg-logo-designer](https://skills.sh/rknall/claude-skills/svg-logo-designer) | Designs and generates scalable SVG logos |
+| [ai-design-skills](https://github.com/elayadesign/ai-design-skills) | Growing collection of design skills — landing-page-design included |
+| [scroll-world](https://github.com/oso95/scroll-world) | Scroll-based interactive skill |
 
 ## Claude plugins
 
