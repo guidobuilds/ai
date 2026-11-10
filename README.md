@@ -13,6 +13,7 @@ Centralized place for all things AI — tools, prompts, agents, skills, and expe
 | [svg-logo-designer](https://skills.sh/rknall/claude-skills/svg-logo-designer) | Designs and generates scalable SVG logos |
 | [ai-design-skills](https://github.com/elayadesign/ai-design-skills) | Growing collection of design skills — landing-page-design included |
 | [scroll-world](https://github.com/oso95/scroll-world) | Scroll-based interactive skill |
+| [security-audit-skill](https://github.com/cloudflare/security-audit-skill) | Cloudflare's multi-phase security audit skill with independently verified, machine-readable findings |
 
 ## Claude plugins
 
